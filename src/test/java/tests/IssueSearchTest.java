@@ -20,7 +20,7 @@ public class IssueSearchTest extends TestBase {
     public static final String repository = "selenide/selenide";
     public static final int number = 1474;
 
-
+    //Селенид + листенер
     @Test
     void issueSearchTestSelenideOnly() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -32,6 +32,7 @@ public class IssueSearchTest extends TestBase {
         $(withText("#1474")).shouldBe(Condition.visible);
     }
 
+    //Лямбда степы
     @Test
     @Owner("Alexey")
     @Feature("Issues")
@@ -64,6 +65,7 @@ public class IssueSearchTest extends TestBase {
 
     private WebSteps steps = new WebSteps();
 
+    //
     @Test
     void issueSearchWithAnnotatedSteps() {
         steps.openMainPage(url);
